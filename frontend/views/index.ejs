@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=q, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">    
+    <!-- Custom CSS -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+        * {
+            font-family: 'Prompt', sans-serif;
+        }
+        
+    </style>
+    <!-- MDB -->
+    <link href="css/mdb.min.css"rel="stylesheet"/>
+    <!-- Sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <% if(title === "UPLOAD"){ %>
+        <title>[ Upload ]</title>
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	    <link rel="stylesheet" href="css/upload.css">
+    <% } else if(title === "GALLERY"){ %>
+        <title>[ Gallery ]</title>
+    <% } %>
+</head>
+<body>
+
+<%- include("./partials/nav-bar.ejs") %>
+
+<% if(title == "UPLOAD"){ %>
+    <%- include("./pages/upload.ejs") %>
+<% } else if(title == "GALLERY"){ %>
+    <%- include("./pages/gallery.ejs") %>
+<% } else if(title == "TABLE"){ %>
+    <%- include("./pages/table.ejs") %>
+<% } %>
+
+<%- include("./partials/footer.ejs") %>
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- MDB -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+</html>

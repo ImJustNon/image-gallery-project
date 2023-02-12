@@ -1,0 +1,27 @@
+{
+  "name": "upload-frontend",
+  "version": "1.0.0",
+  "description": "This app will connect with Upload-API",
+  "main": "server.js",
+  "author": "I_Non",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "chalk": "~4.1.2",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-useragent": "^1.0.15",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "http-errors": "^2.0.0",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7",
+    "pg": "^8.9.0",
+    "request": "^2.88.2"
+  }
+}

@@ -1,0 +1,59 @@
+<main class="m-5">
+        <table class="table align-middle mb-0 bg-white">
+            <thead class="bg-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Image</th>
+                    <th>File name</th>
+                    <th>URL</th>
+                    <th>Original name</th>
+                    <th>File type</th>
+                    <th>Create at</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i = 0; i < data.images.length; i++){ %>
+                    <tr>
+                        <td><%= data.images[i].unique_id %></td>
+                        <td>
+                        <div class="d-flex align-items-center">
+                            <img
+                                src="<%= data.images[i].fileurl %>"
+                                alt=""
+                                style="width: 50px;"
+                            />
+                        </div>
+                        </td>
+                        <td>
+                            <%= data.images[i].filename %>
+                        </td>
+                        <td>
+                            <a href="<%= data.images[i].fileurl %>" target="_blank"><%= data.images[i].fileurl %></a>
+                        </td>
+                        <td>
+                            <%= data.images[i].original_file_name %>
+                        </td>
+                        <td>
+                            <%= data.images[i].filetype %>
+                        </td>
+                        <td>
+                            <%= Date(data.images[i].create_at) %>
+                        </td>
+                        <td>
+                        <button type="button" class="btn btn-link btn-sm btn-rounded text-danger" onclick="deleteData('<%= data.images[i].unique_id %>')">
+                            <i class="fa-solid fa-trash-can"></i> Delete
+                        </button>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+</main>
+
+
+<script>
+    function deleteData(id){
+        location.replace('/table/delete-data?id=' + String(id));
+    }
+</script>
