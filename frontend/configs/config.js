@@ -15,6 +15,6 @@ module.exports = {
         port: 8888,
     },
     api: {
-        server: 'https://uploadapi-project.fly.dev',
+        server: 'http://45.141.26.136:8800',
     },
 }
